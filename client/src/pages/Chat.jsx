@@ -7,6 +7,14 @@ import {
   Send as SendIcon,
 } from "@mui/icons-material";
 import { InputBox } from "../components/styles/StyledComponents";
+import FileMenu from "../components/dialogs/FileMenu";
+import { sampleMessage } from "../constant/sampleData";
+import MessageComponent from "../components/shared/MessageComponent";
+
+const user = {
+  _id: "user._id",
+  name: "Vikash",
+};
 
 const Chat = () => {
   const containRef = useRef(null);
@@ -21,12 +29,16 @@ const Chat = () => {
         bgcolor={gray}
         height={"90%"}
         sx={{ overflowX: "hidden", overflowY: "auto" }}
-      ></Stack>
+      >
+        {sampleMessage.map((i) => (
+          <><MessageComponent key={i._id} message={i} user={user} /></>
+        ))}
+      </Stack>
 
       <form
         style={{
           height: "10%",
-          width:"100%"
+          width: "100%",
         }}
       >
         <Stack
@@ -37,31 +49,36 @@ const Chat = () => {
           position={"relative"}
         >
           <IconButton
-          sx={{
-            position: "absolute",
-            left: "1.5rem",
-            rotate: "30deg"
-          }}
+            sx={{
+              position: "absolute",
+              left: "1.5rem",
+              rotate: "30deg",
+            }}
           >
             <AttachFileIcon />
           </IconButton>
 
-          <InputBox  placeholder="Type Message Here..."/>
+          <InputBox placeholder="Type Message Here..." />
 
-          <IconButton type="submit" sx={{
-            rotate: "-30deg",
-            bgcolor: orange,
-            color: "white",
-            marginLeft: "1rem",
-            padding: "0.5rem",
-            "&:hover": {
-              bgcolor: "error.dark", 
-            },
-          }}>
+          <IconButton
+            type="submit"
+            sx={{
+              rotate: "-30deg",
+              bgcolor: orange,
+              color: "white",
+              marginLeft: "1rem",
+              padding: "0.5rem",
+              "&:hover": {
+                bgcolor: "error.dark",
+              },
+            }}
+          >
             <SendIcon />
           </IconButton>
         </Stack>
       </form>
+
+      <FileMenu />
     </Fragment>
   );
 };

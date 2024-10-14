@@ -13,7 +13,7 @@ export const samplechats = [
       "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
       "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
     ],
-    name: "john pass",
+    name: "john due",
     _id: "2",
     groupChat: false,
     members: ["1", "2"],
@@ -56,6 +56,24 @@ export const samplechats = [
   },
 ];
 
+export const samepleChats = [
+  {
+    avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+    name: "John Doe",
+    _id: "1",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+
+  {
+    avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+    name: "John Boi",
+    _id: "2",
+    groupChat: true,
+    members: ["1", "2"],
+  },
+];
+
 export const sampleUser = [
   {
     avatar:
@@ -93,4 +111,37 @@ export const sampleNotification = [
     },
     _id: "2"
   }
+]
+
+
+export const sampleMessage = [
+  {
+    attachments: [
+      {
+        public_id: "asad",
+        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg"
+      }
+    ],
+    _id: 'dsdsd',
+    sender: {
+      _id: "user._id",
+      name: "chaman",
+    },
+    chat: "chatId"
+  },
+  {
+    attachments: [
+      {
+        public_id: "asad 2",
+        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg"
+      }
+    ],
+    content: "this is msg 2",
+    _id: 'dsdsddsds',
+    sender: {
+      _id: "userdsaddsadas",
+      name: "chaman 2",
+    },
+    chat: "chatId"
+  },
 ]

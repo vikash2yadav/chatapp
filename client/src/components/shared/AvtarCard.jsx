@@ -1,4 +1,5 @@
 import { Avatar, AvatarGroup, Box, Stack } from "@mui/material";
+import {transforImage} from "../../lib/features";
 
 const AvtarCard = ({ avatar = [], max = 4 }) => {
   return (
