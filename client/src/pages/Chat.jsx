@@ -6,7 +6,7 @@ import {
   AttachFile as AttachFileIcon,
   Send as SendIcon,
 } from "@mui/icons-material";
-import { InputBox } from "../components/styles/StyledComponents";
+import { InputBox, VisuallyHiddenInput } from "../components/styles/StyledComponents";
 import FileMenu from "../components/dialogs/FileMenu";
 import { sampleMessage } from "../constant/sampleData";
 import MessageComponent from "../components/shared/MessageComponent";
@@ -38,13 +38,14 @@ const Chat = () => {
       <form
         style={{
           height: "10%",
-          width: "100%",
+          width: "100%"
         }}
       >
         <Stack
           direction={"row"}
           height={"100%"}
           padding={"1rem"}
+          spacing={"4rem"}
           alignItems={"center"}
           position={"relative"}
         >

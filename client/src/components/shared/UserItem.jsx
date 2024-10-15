@@ -3,7 +3,7 @@ import { Add as AddIcon, Remove as RemoveIcon } from "@mui/icons-material";
 import { Avatar, IconButton, ListItem, Stack, Typography } from "@mui/material";
 import { memo } from "react";
 
-const UserItem = ({ user, handler, handlerIsLoading, isAdded = false }) => {
+const UserItem = ({ user, handler, handlerIsLoading, isAdded = false, styling = {} }) => {
   return (
     <ListItem>
       <Stack
@@ -11,6 +11,7 @@ const UserItem = ({ user, handler, handlerIsLoading, isAdded = false }) => {
         alignItems={"center"}
         spacing={"1rem"}
         width={"100%"}
+        {...styling}
       >
         <Avatar src={user?.avatar} alt={user?.name} />
 
@@ -59,6 +60,7 @@ UserItem.propTypes = {
   handler: PropTypes.func.isRequired,
   handlerIsLoading: PropTypes.bool.isRequired,
   isAdded: PropTypes.bool.isRequired,
+  styling: PropTypes.object,
 };
 
 export default memo(UserItem);

@@ -40,7 +40,7 @@ const NewGroup = () => {
         />
         <Typography variant="body1">Members</Typography>
         <Stack>
-          {members.map((i) => (
+          {members?.map((i) => (
             <UserItem
               user={i}
               key={i._id}

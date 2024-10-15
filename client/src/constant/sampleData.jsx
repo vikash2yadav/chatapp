@@ -41,7 +41,7 @@ export const samplechats = [
       "http://localhost:5000/helloMeela/images/Listings/Services/Screenshot_from_2024_08_23_16_25_16_1728392808583_87099.png",
     ],
     name: "john pass",
-    _id: "9",
+    _id: "95",
     groupChat: false,
     members: ["1", "2"],
   },
@@ -50,7 +50,119 @@ export const samplechats = [
       "http://localhost:5000/helloMeela/images/Listings/Services/download_1728392730707_699.jpeg",
     ],
     name: "john pass",
-    _id: "10",
+    _id: "5",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Listings/Services/download_1728390165296_94999.jpg",
+    ],
+    name: "john doe",
+    _id: "41",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john due",
+    _id: "24",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john pass",
+    _id: "33",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Listings/Services/download_1728390165296_94999.jpg",
+    ],
+    name: "john doe",
+    _id: "12",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john due",
+    _id: "12",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john pass",
+    _id: "223",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Listings/Services/download_1728390165296_94999.jpg",
+    ],
+    name: "john doe",
+    _id: "2221",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john due",
+    _id: "299",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john pass",
+    _id: "39",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Listings/Services/download_1728390165296_94999.jpg",
+    ],
+    name: "john doe",
+    _id: "1000",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john due",
+    _id: "2",
+    groupChat: false,
+    members: ["1", "2"],
+  },
+  {
+    avatar: [
+      "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+    ],
+    name: "john pass",
+    _id: "3",
     groupChat: false,
     members: ["1", "2"],
   },
