@@ -8,13 +8,12 @@ import Profile from "../specific/Profile";
 
 const AppLayout = () => (WrappedComponent) => {
   return (props) => {
-
     const params = useParams();
     const chatId = params?.chatId;
 
     const handleDeleteChat = (e, _id, groupChat) => {
       e.preventDefault();
-    }
+    };
 
     return (
       <>
@@ -26,7 +25,8 @@ const AppLayout = () => (WrappedComponent) => {
             sm={4}
             md={3}
             sx={{ display: { xs: "none", sm: "block" } }}
-            height={"100%"}
+            height={"100vh"}
+            overflow={"auto"}
           >
             <Chatlist
               chats={samplechats}
@@ -41,17 +41,18 @@ const AppLayout = () => (WrappedComponent) => {
               handleDeleteChat={handleDeleteChat}
             />
           </Grid>
-          <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
-            <WrappedComponent {...props} />
+
+          <Grid item xs={12} sm={8} md={5} lg={6} height={"100vh"}>
+            <WrappedComponent {...props}/>
           </Grid>
 
           <Grid
             item
             md={4}
             lg={3}
-            height={"100%"}
+            height={"100vh"}
             sx={{
-              display: { xs: "none", sm: "block" },
+              display: { xs: "none", sm: "none", md: "block" },
               padding: "2rem",
               bgcolor: "rgba(0,0,0,0.85)",
             }}

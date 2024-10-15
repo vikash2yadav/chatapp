@@ -1,5 +1,10 @@
-import { Avatar, Stack } from "@mui/material";
-
+import { Avatar, Stack, Typography } from "@mui/material";
+import {
+  Face as FaceIcon,
+  AlternateEmail as UserNameIcon,
+  CalendarMonth as CalendorIcon,
+} from "@mui/icons-material";
+import moment from "moment";
 const Profile = () => {
   return (
     <Stack spacing={"2rem"} direction={"column"} alignItems={"center"}>
@@ -12,11 +17,38 @@ const Profile = () => {
           border: "5px solid white",
         }}
       />
-      <ProfileCard />
+      <ProfileCard heading={"Bio"} text={"system pad denge"} />
+      <ProfileCard
+        heading={"Username"}
+        text={"systemm"}
+        Icon={<UserNameIcon />}
+      />
+      <ProfileCard heading={"Name"} text={"Vikash yadav"} Icon={<FaceIcon />} />
+      <ProfileCard
+        heading={"Joined"}
+        text={moment('2024-07-04T18:30:00.000Z').fromNow()}
+        Icon={<CalendorIcon />}
+      />
     </Stack>
   );
 };
 
-const ProfileCard = ({text, icon, heading}) => <div>ProfileCart</div>;
+const ProfileCard = ({ text, Icon, heading }) => (
+  <Stack
+    direction={"row"}
+    alignItems={"center"}
+    spacing={"1rem"}
+    color={"white"}
+    textAlign={"center"}
+  >
+    {Icon && Icon}
+    <Stack>
+      <Typography variant="body1">{text}</Typography>
+      <Typography color="gray" variant="caption">
+        {heading}
+      </Typography>
+    </Stack>
+  </Stack>
+);
 
 export default Profile;
