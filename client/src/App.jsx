@@ -10,10 +10,10 @@ const Groups = lazy(() => import("./pages/Groups"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/Admin/AdminLogin"));
 const Dashboard = lazy(() => import("./pages/Admin/Dashboard"));
-const UserManagement = lazy(() => import("./components/layout/UserManagement"));
-const ChatManagement = lazy(() => import("./components/layout/ChatManagement"));
+const UserManagement = lazy(() => import("./pages/Admin/UserManagement"));
+const ChatManagement = lazy(() => import("./pages/Admin/ChatManagement"));
 const MessageManagement = lazy(() =>
-  import("./components/layout/MessageManagement")
+  import("./pages/Admin/MessageManagement")
 );
 
 let user = true;
