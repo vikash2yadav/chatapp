@@ -9,7 +9,7 @@ import {
 import { InputBox, VisuallyHiddenInput } from "../components/styles/StyledComponents";
 import FileMenu from "../components/dialogs/FileMenu";
 import { sampleMessage } from "../constant/sampleData";
-import MessageComponent from "../components/shared/MessageComponent";
+import MessageComponent from "./Admin/MessageComponent";
 
 const user = {
   _id: "user._id",

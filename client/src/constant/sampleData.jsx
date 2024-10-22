@@ -207,53 +207,170 @@ export const sampleUser = [
   },
 ];
 
-
 export const sampleNotification = [
   {
     sender: {
-      avatar: "http://localhost:5000/helloMeela/images/Listings/Services/download_1728392730707_699.jpeg",
-      name: "John doe"
+      avatar:
+        "http://localhost:5000/helloMeela/images/Listings/Services/download_1728392730707_699.jpeg",
+      name: "John doe",
     },
-    _id: "1"
+    _id: "1",
   },
   {
     sender: {
-      avatar: "http://localhost:5000/helloMeela/images/Listings/Services/download_1728392730707_699.jpeg",
-      name: "John Boy"
+      avatar:
+        "http://localhost:5000/helloMeela/images/Listings/Services/download_1728392730707_699.jpeg",
+      name: "John Boy",
     },
-    _id: "2"
-  }
-]
-
+    _id: "2",
+  },
+];
 
 export const sampleMessage = [
   {
     attachments: [
       {
         public_id: "asad",
-        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg"
-      }
+        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      },
     ],
-    _id: 'dsdsd',
+    _id: "dsdsd",
     sender: {
       _id: "user._id",
       name: "chaman",
     },
-    chat: "chatId"
+    chat: "chatId",
   },
   {
     attachments: [
       {
         public_id: "asad 2",
-        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg"
-      }
+        url: "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      },
     ],
     content: "this is msg 2",
-    _id: 'dsdsddsds',
+    _id: "dsdsddsds",
     sender: {
       _id: "userdsaddsadas",
       name: "chaman 2",
     },
-    chat: "chatId"
+    chat: "chatId",
   },
-]
+];
+
+export const dashboardData = {
+  users: [
+    {
+      name: "John Doe",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "1",
+      username: "john_doe",
+      friends: 20,
+      groups: 3,
+    },
+    {
+      name: "John Cena",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "2",
+      username: "john_cena",
+      friends: 10,
+      groups: 8,
+    },
+    {
+      name: "John Cena",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "2",
+      username: "john_cena",
+      friends: 10,
+      groups: 8,
+    },
+    {
+      name: "John Cena",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "2",
+      username: "john_cena",
+      friends: 10,
+      groups: 8,
+    },
+    {
+      name: "John Cena",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "2",
+      username: "john_cena",
+      friends: 10,
+      groups: 8,
+    },
+  ],
+
+  chats: [
+    {
+      name: "John Doe",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "1",
+      groupChat: false,
+      members: ["1", "2"],
+      totalMembers: 2,
+      totalMessages: 20,
+      creator: {
+        name: "John Doe",
+        avatar:
+          "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      },
+    },
+    {
+      name: "John Dong",
+      avatar:
+        "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      _id: "2",
+      groupChat: false,
+      members: ["1", "2"],
+      totalMembers: 20,
+      totalMessages: 70,
+      creator: {
+        name: "John Doooo",
+        avatar:
+          "http://localhost:5000/helloMeela/images/Seo/Twitter/download_1728392879358_44599.jpg",
+      },
+    },
+  ],
+
+
+  messages: [
+    {
+      attachments: [],
+      content: "Message hai",
+      _id: "sfnsdjkfsdnfkjsbnd",
+      sender: {
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        name: "Chaman ",
+      },
+      chat: "chatId",
+      groupChat: false,
+      createdAt: "2024-02-12T10:41:30.630Z",
+    },
+
+    {
+      attachments: [
+        {
+          public_id: "asdsad 2",
+          url: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+      content: "",
+      _id: "sfnsdjkfsdnfkdddjsbnd",
+      sender: {
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        name: "Chaman  2",
+      },
+      chat: "chatId",
+      groupChat: true,
+      createdAt: "2024-02-12T10:41:30.630Z",
+    },
+  ],
+};
