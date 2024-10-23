@@ -1,7 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectRoute from "./components/auth/ProtectRoute";
 import { LayoutLoader } from "./components/layout/Loader";
+import axios from "axios";
+// import { server } from "./constant/config";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -12,13 +14,18 @@ const AdminLogin = lazy(() => import("./pages/Admin/AdminLogin"));
 const Dashboard = lazy(() => import("./pages/Admin/Dashboard"));
 const UserManagement = lazy(() => import("./pages/Admin/UserManagement"));
 const ChatManagement = lazy(() => import("./pages/Admin/ChatManagement"));
-const MessageManagement = lazy(() =>
-  import("./pages/Admin/MessageManagement")
-);
+const MessageManagement = lazy(() => import("./pages/Admin/MessageManagement"));
 
 let user = true;
 
 function App() {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/v1/user/me`)
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
+  }, []);
+
   return (
     <BrowserRouter>
       <Suspense fallback={<LayoutLoader />}>
@@ -36,10 +43,7 @@ function App() {
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/users-management" element={<UserManagement />} />
-          <Route
-            path="/admin/messages"
-            element={<MessageManagement />}
-          />
+          <Route path="/admin/messages" element={<MessageManagement />} />
           <Route path="/admin/chats-management" element={<ChatManagement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

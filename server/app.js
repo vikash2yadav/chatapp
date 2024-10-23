@@ -10,18 +10,25 @@ import { Server } from "socket.io";
 import { corsOptions } from "./constants/config.js";
 import { createServer } from "http";
 import { NEW_MESSAGE, NEW_MESSAGE_ALERT } from "./constants/events.js";
-dotenv.config({ path: "./.env" });
 import { v4 as uuid } from "uuid";
 import { getSockets } from "./lib/helper.js";
 import { Message } from "./models/message.js";
+import cors from "cors";
+
+dotenv.config({ path: "./.env" });
 
 const app = express();
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors(corsOptions));
+
 const server = createServer(app);
 const io = new Server(server, {
   cors: corsOptions,
 });
 
-io.use((socket, next)=> {});
+io.use((socket, next) => {});
 
 io.on("connection", (socket) => {
   socket.handshake.query.auth;
@@ -75,14 +82,11 @@ const userSocketIDs = new Map();
 const mongoURI = process.env.MONGO_URL;
 const port = process.env.PORT || 9000;
 
-const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
+const envMode = process.env.NODE_ENV.trim() || "DEVELOPMENT";
 
 connectDB(mongoURI);
 
-app.use(cookieParser());
-app.use(express.json());
-
-app.use("/user", userRoute);
+app.use("/api/v1/user", userRoute);
 app.use("/chat", chatRoute);
 app.use("/admin", adminRoute);
 
