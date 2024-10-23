@@ -9,9 +9,11 @@ import adminRoute from "./routes/admin.js";
 import { Server } from "socket.io";
 import { corsOptions } from "./constants/config.js";
 import { createServer } from "http";
-import { NEW_MESSAGE } from "./constants/events.js";
+import { NEW_MESSAGE, NEW_MESSAGE_ALERT } from "./constants/events.js";
 dotenv.config({ path: "./.env" });
 import { v4 as uuid } from "uuid";
+import { getSockets } from "./lib/helper.js";
+import { Message } from "./models/message.js";
 
 const app = express();
 const server = createServer(app);
@@ -19,13 +21,18 @@ const io = new Server(server, {
   cors: corsOptions,
 });
 
+io.use((socket, next)=> {});
+
 io.on("connection", (socket) => {
+  socket.handshake.query.auth;
   const user = {
     _id: "sdas",
     name: "dfdsf",
   };
 
-  socket.on(NEW_MESSAGE, ({ chatId, members, message }) => {
+  userSocketIDs.set(user._id.toString(), socket.id);
+
+  socket.on(NEW_MESSAGE, async ({ chatId, members, message }) => {
     const messageForRealTime = {
       content: message,
       _id: uuid(),
@@ -36,14 +43,34 @@ io.on("connection", (socket) => {
       chat: chatId,
       createdAt: new Date().toISOString(),
     };
-    console.log("new", messageForRealTime);
+    const messageForDB = {
+      content: message,
+      sender: user._id,
+      chat: chatId,
+    };
+
+    console.log("message", messageForRealTime);
+    const membersSocket = getSockets(members);
+    io.to(membersSocket).emit(NEW_MESSAGE, {
+      chatId,
+      message: messageForRealTime,
+    });
+    io.to(membersSocket).emit(NEW_MESSAGE_ALERT, { chatId });
+
+    try {
+      await Message.create(messageForDB);
+    } catch (error) {
+      console.log("error", error);
+    }
   });
   socket.on("disconnect", () => {
+    userSocketIDs.delete(user._id.toString());
     console.log("disconnected");
   });
 });
 
 const adminSecretKey = process.env.ADMIN_SECRET_KEY || "vikashissecret";
+const userSocketIDs = new Map();
 
 const mongoURI = process.env.MONGO_URL;
 const port = process.env.PORT || 9000;
